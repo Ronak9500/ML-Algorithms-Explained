@@ -14,21 +14,26 @@ The production-level implementation using `scikit-learn` includes:
 - **Data Validation**: Ensures inputs are numpy arrays with compatible shapes.
 - **Error Handling**: Manages common issues, such as using the model before training.
 - **R-squared Score**: An additional method (`score`) to evaluate the model using the R-squared metric.
+- **Data Loading**: Loads data from a CSV file for easier preprocessing.
 
 ### Usage
 
-#### Training the Model
+#### Loading Data
+
+Data should be placed in the `data` directory inside the `linear_regression` folder. Here's how to load and use it:
 
 ```python
 from linear_regression import LinearRegression
 import numpy as np
+import os
 
-# Sample data
-X = np.array([[1], [2], [4], [3], [5]])
-y = np.array([1, 3, 3, 2, 5])
-
-# Initialize and train the model
+# Load data
+data_path = os.path.join(os.path.dirname(__file__), 'data', 'sample_data.csv')
 model = LinearRegression()
+X, y = model.load_data(data_path)
+
+#Training the Model
+# Initialize and train the model
 model.fit(X, y)
 
 #Making Predictions
@@ -38,3 +43,12 @@ print("Predictions:", predictions)
 #Evaluating the Model
 r2_score_value = model.score(X, y)
 print("R-squared score:", r2_score_value)
+
+#Inference
+#To make predictions on new data:
+new_data = np.array([[6], [7]])
+inference_predictions = model.predict(new_data)
+print("Inference predictions for new data:", inference_predictions)
+
+
+
