@@ -10,7 +10,7 @@ Linear regression is a statistical method to model the relationship between a de
 
 ### Production-Level Implementation
 
-The production-level implementation includes:
+The production-level implementation using `scikit-learn` includes:
 - **Data Validation**: Ensures inputs are numpy arrays with compatible shapes.
 - **Error Handling**: Manages common issues, such as using the model before training.
 - **R-squared Score**: An additional method (`score`) to evaluate the model using the R-squared metric.
@@ -31,13 +31,10 @@ y = np.array([1, 3, 3, 2, 5])
 model = LinearRegression()
 model.fit(X, y)
 
-# Making Predictions
+#Making Predictions
 predictions = model.predict(X)
 print("Predictions:", predictions)
 
-# Evaluating the Model
-r2_score = model.score(X, y)
-print("R-squared score:", r2_score)
-
-
-
+#Evaluating the Model
+r2_score_value = model.score(X, y)
+print("R-squared score:", r2_score_value)
