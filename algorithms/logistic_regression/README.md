@@ -32,7 +32,7 @@ import numpy as np
 import os
 
 # Load data
-data_path = os.path.join(os.path.dirname(__file__), 'data', 'sample_data.csv')
+data_path = os.path.join(os.path.dirname(__file__), 'data', 'logistic_sample_data.csv')
 model = LogisticRegression()
 X, y = model.load_data(data_path)
 
