@@ -29,3 +29,23 @@ data_path = os.path.join(os.path.dirname(__file__), 'data', 'sample_data.csv')
 model = PolynomialRegression(degree=3)
 X, y = model.load_data(data_path)
 
+#Training the Model
+#Initialize and train the model:
+model.fit(X, y)
+
+#Making Predictions
+#Make predictions on the training data:
+predictions = model.predict(X)
+print("Predictions:", predictions)
+
+#Evaluating the Model
+#Evaluate the model using the R-squared score:
+r2_score_value = model.score(X, y)
+print("R-squared score:", r2_score_value)
+
+#Inference
+#To make predictions on new data:
+new_data = np.array([[6], [7]])
+inference_predictions = model.predict(new_data)
+print("Inference predictions for new data:", inference_predictions)
+
