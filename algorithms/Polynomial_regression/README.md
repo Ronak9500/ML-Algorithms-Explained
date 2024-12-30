@@ -7,8 +7,7 @@ Polynomial regression is a form of regression analysis in which the relationship
 
 ### Production-Level Implementation
 The production-level implementation using scikit-learn includes:
-
-Data Validation: Ensures inputs are numpy arrays with compatible shapes.
-Error Handling: Manages common issues, such as using the model before training.
-R-squared Score: An additional method (score) to evaluate the model using the R-squared metric.
-Data Loading: Loads data from a CSV file for easier preprocessing.
+      - **Data Validation**: Ensures inputs are numpy arrays with compatible shapes.
+      - **Error Handling**: Manages common issues, such as using the model before training.
+      - **R-squared Score**: An additional method (score) to evaluate the model using the R-squared metric.
+      - **Data Loading**: Loads data from a CSV file for easier preprocessing.
